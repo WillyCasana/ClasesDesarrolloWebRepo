@@ -4,3 +4,9 @@ E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\obj\Debug\SisPlaBO
 E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\obj\Debug\SisPlaBOL.csproj.CoreCompileInputs.cache
 E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\obj\Debug\SisPla.dll
 E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\obj\Debug\SisPla.pdb
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPla\bin\Debug\SisPla.dll
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPla\bin\Debug\SisPla.pdb
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPla\obj\Debug\SisPlaBOL.csprojAssemblyReference.cache
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPla\obj\Debug\SisPlaBOL.csproj.CoreCompileInputs.cache
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPla\obj\Debug\SisPla.dll
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPla\obj\Debug\SisPla.pdb

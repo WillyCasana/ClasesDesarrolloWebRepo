@@ -60,7 +60,7 @@
                             <asp:BoundField DataField="ActFecha" HeaderText="Fecha" />
                             <asp:BoundField DataField="CatDescripcion" HeaderText="Descripcion" />
                             <asp:BoundField DataField="ActTiempo" HeaderText="Tiempo" />
-
+                          
                         </Columns>
 
                     </asp:GridView>

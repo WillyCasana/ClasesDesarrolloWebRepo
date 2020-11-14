@@ -11,7 +11,25 @@ namespace SisPlaBLL
 {
     public class SisplaLogic
     {
-        public static List<ActividadEnt> ActividadEntListado()
+
+        #region Usuario
+        public static List<RolEnt> RolListado()
+        {
+            return SisPlaDb.RolListado();
+        }
+
+            public static List<UsuarioEnt> UsuarioListado()
+        {
+            return SisPlaDb.UsuarioListado();
+        }
+
+            #endregion
+
+
+
+            #region Actividad
+
+            public static List<ActividadEnt> ActividadEntListado()
         {
             
 
@@ -29,5 +47,7 @@ namespace SisPlaBLL
             SisPlaDb.ActividadEntRegistrar(act);
         }
 
-     }
+        #endregion
+
+    }
 }

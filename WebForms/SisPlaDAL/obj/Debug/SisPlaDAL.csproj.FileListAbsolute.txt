@@ -9,3 +9,14 @@ E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPl
 E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPlaDAL.csproj.CopyComplete
 E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPlaDAL.dll
 E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPlaDAL.pdb
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\bin\Debug\SisPlaDAL.dll
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\bin\Debug\SisPlaDAL.pdb
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\bin\Debug\Dapper.dll
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\bin\Debug\SisPla.dll
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\bin\Debug\SisPla.pdb
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\bin\Debug\Dapper.xml
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\obj\Debug\SisPlaDAL.csprojAssemblyReference.cache
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\obj\Debug\SisPlaDAL.csproj.CoreCompileInputs.cache
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\obj\Debug\SisPlaDAL.csproj.CopyComplete
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\obj\Debug\SisPlaDAL.dll
+E:\Proyectos\ClasesDesarrolloWebRepo\WebForms\SisPlaDAL\obj\Debug\SisPlaDAL.pdb
