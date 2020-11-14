@@ -1,0 +1,6 @@
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\bin\Debug\SisPla.dll
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\bin\Debug\SisPla.pdb
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\obj\Debug\SisPlaBOL.csprojAssemblyReference.cache
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\obj\Debug\SisPlaBOL.csproj.CoreCompileInputs.cache
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\obj\Debug\SisPla.dll
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPla\obj\Debug\SisPla.pdb

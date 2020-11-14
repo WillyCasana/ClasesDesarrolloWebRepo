@@ -1,0 +1,11 @@
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\bin\Debug\SisPlaDAL.dll
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\bin\Debug\SisPlaDAL.pdb
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\bin\Debug\Dapper.dll
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\bin\Debug\SisPla.dll
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\bin\Debug\SisPla.pdb
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\bin\Debug\Dapper.xml
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPlaDAL.csprojAssemblyReference.cache
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPlaDAL.csproj.CoreCompileInputs.cache
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPlaDAL.csproj.CopyComplete
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPlaDAL.dll
+E:\Proyectos\ClasesDesarolloWeb\CodigoFuenteDesarrollo\SisPlaDAL\obj\Debug\SisPlaDAL.pdb
