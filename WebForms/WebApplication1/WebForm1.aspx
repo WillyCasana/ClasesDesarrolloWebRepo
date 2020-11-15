@@ -49,6 +49,7 @@
             <div class="row">
                 <div class="col">
                     <asp:Button ID="btnAgregar" CssClass="btn btn-primary"  runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+                    <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
                 </div>
             </div>
 
