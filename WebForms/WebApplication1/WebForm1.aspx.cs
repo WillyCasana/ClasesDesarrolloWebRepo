@@ -50,7 +50,13 @@ namespace WebApplication1
 
         protected void lnkSeleccionar_Click(object sender, EventArgs e)
         {
-           
+            LinkButton lnk = (LinkButton)sender;
+
+            int id= Convert.ToInt32(lnk.Attributes["Clave"]);
+         
+
+
+
         }
     }
 }
