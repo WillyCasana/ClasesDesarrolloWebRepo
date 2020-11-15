@@ -54,16 +54,18 @@
 
             <div class="row">
                 <div class="col">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
+                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped" DataKeyNames="ActId" AutoGenerateColumns="false">
                         <Columns>
                             <asp:BoundField DataField="ActComentario" HeaderText="Comentario" />
                             <asp:BoundField DataField="ActFecha" HeaderText="Fecha" />
                             <asp:BoundField DataField="CatDescripcion" HeaderText="Descripcion" />
                             <asp:BoundField DataField="ActTiempo" HeaderText="Tiempo" />
 
-                            <asp:TemplateField HeaderText="Seleccionar">
+                          
+
+                              <asp:TemplateField HeaderText="Seleccionar">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lnkSeleccionar" Clave='<%#Eval("ActId") %>' OnClick="lnkSeleccionar_Click" runat="server">Seleccionar</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkSeleccionar" runat="server" CssClass="btn btn-primary" Clave='<%# Eval("ActId") %>'  OnClick="lnkSeleccionar_Click" >Seleccionar</asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
 
