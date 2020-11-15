@@ -87,6 +87,8 @@ namespace WebApplication1
             actObj.CatId = Convert.ToInt32(ddlCategoria.SelectedValue);
             actObj.UsuId = 1;
 
+            SisplaLogic.ActividadEntActualizar(actObj);
+
             cargarActividad();
 
         }

@@ -20,7 +20,7 @@ namespace SisPlaDAL
         {
             using (SqlConnection conn = new SqlConnection(cadConexion))
             {
-                conn.Execute("usp_ActividadInsertar"
+                conn.Execute("usp_ActividadActualizar"
                     , new
                     {    
                         act.ActId,
