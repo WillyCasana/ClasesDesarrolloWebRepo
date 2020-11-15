@@ -15,6 +15,41 @@ namespace SisPlaDAL
         static string cadConexion = @"Server=DESKTOP-4KPFF10\SVR2016 ; Database=SisPlaAct;User Id=sa;Password=sa";
         //static string cadConexion = "Server=DESKTOP-4KPFF10\SVR2016 ; Database=SisPlaAct;Integrated Security=true";
 
+
+        public static void ActividadEntActualizar(ActividadEnt act)
+        {
+            using (SqlConnection conn = new SqlConnection(cadConexion))
+            {
+                conn.Execute("usp_ActividadInsertar"
+                    , new
+                    {    
+                        act.ActId,
+                        act.ActComentario,
+                        act.ActTiempo,
+                        act.CatId,
+                        act.ActFecha
+                    ,
+                        act.UsuId
+                    }, commandType: System.Data.CommandType.StoredProcedure);
+            }
+
+        }
+
+
+        public static ActividadEnt ActividadEntListadoXId(int id)
+        {
+            ActividadEnt ActividadEntObj = null;
+
+            using (SqlConnection conn = new SqlConnection(cadConexion))
+            {
+                ActividadEntObj = conn.Query<ActividadEnt>("USP_ActividadListarXId", new { @actid=id}, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
+            }
+
+            return ActividadEntObj;
+
+        }
+
+
         public static List<ActividadEnt> ActividadEntListado()
         {
             List<ActividadEnt> ActividadEntObj = null;

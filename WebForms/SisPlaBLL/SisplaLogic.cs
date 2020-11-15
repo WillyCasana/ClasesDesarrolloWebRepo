@@ -11,7 +11,22 @@ namespace SisPlaBLL
 {
     public class SisplaLogic
     {
-        public static List<ActividadEnt> ActividadEntListado()
+        public static void ActividadEntActualizar(ActividadEnt act)
+        {
+            SisPlaDb.ActividadEntActualizar(act);
+
+        }
+
+
+
+            public static ActividadEnt ActividadEntListadoXId(int id)
+        {
+
+            return SisPlaDb.ActividadEntListadoXId(id);
+        }
+
+
+            public static List<ActividadEnt> ActividadEntListado()
         {
             
 

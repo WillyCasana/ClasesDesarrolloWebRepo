@@ -14,7 +14,6 @@
 <!-- jQuery and JS bundle w/ Popper.js -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
 </head>
 <body>
 
@@ -47,20 +46,27 @@
 
 
             <div class="row">
-                <div class="col">
+                <div class="col-md-1">
                     <asp:Button ID="btnAgregar" CssClass="btn btn-primary"  runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+                </div>
+                 <div class="col-md-1">
+                    <asp:Button ID="btnModificar" CssClass="btn btn-primary"  runat="server" Text="Modificar" OnClick="btnModificar_Click" />
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
+                    <asp:GridView ID="gvActividad" runat="server" CssClass="table table-striped" DataKeyNames="ActId" AutoGenerateColumns="false">
                         <Columns>
                             <asp:BoundField DataField="ActComentario" HeaderText="Comentario" />
                             <asp:BoundField DataField="ActFecha" HeaderText="Fecha" />
                             <asp:BoundField DataField="CatDescripcion" HeaderText="Descripcion" />
                             <asp:BoundField DataField="ActTiempo" HeaderText="Tiempo" />
-
+                            <asp:TemplateField HeaderText="Seleccionar">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnkSeleccionar" runat="server" CssClass="btn btn-primary" Clave='<%# Eval("ActId") %>'  OnClick="lnkSeleccionar_Click" >Seleccionar</asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                         </Columns>
 
                     </asp:GridView>
