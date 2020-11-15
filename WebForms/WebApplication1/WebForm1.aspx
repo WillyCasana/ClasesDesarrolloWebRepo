@@ -61,6 +61,12 @@
                             <asp:BoundField DataField="CatDescripcion" HeaderText="Descripcion" />
                             <asp:BoundField DataField="ActTiempo" HeaderText="Tiempo" />
 
+                            <asp:TemplateField HeaderText="Seleccionar">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lnkSeleccionar" Clave='<%#Eval("ActId") %>' OnClick="lnkSeleccionar_Click" runat="server">Seleccionar</asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
                         </Columns>
 
                     </asp:GridView>

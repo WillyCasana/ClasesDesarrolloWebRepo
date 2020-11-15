@@ -47,5 +47,10 @@ namespace WebApplication1
             cargarActividad();
 
         }
+
+        protected void lnkSeleccionar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
