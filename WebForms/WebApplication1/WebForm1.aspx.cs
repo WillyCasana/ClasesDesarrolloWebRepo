@@ -22,6 +22,8 @@ namespace WebApplication1
 
         private void cargarCategoria()
         {
+
+             
             ddlCategoria.DataSource = SisplaLogic.CategoriaEntListado();
             ddlCategoria.DataValueField = "CatId";
             ddlCategoria.DataTextField = "CatDescripcion";
@@ -80,9 +82,15 @@ namespace WebApplication1
             actObj.CatId = Convert.ToInt32( ddlCategoria.SelectedValue);
             actObj.ActTiempo = Convert.ToDecimal( txtTiempo.Text);
             actObj.ActId = Convert.ToInt32( ViewState["id"]);
+            actObj.UsuId = 1;
 
             SisplaLogic.ActividadEntActualizar(actObj);
             cargarActividad();
+        }
+
+        protected void ddlCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32( ddlCategoria.SelectedValue);
         }
     }
 }
