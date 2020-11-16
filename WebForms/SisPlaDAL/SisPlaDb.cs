@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,14 @@ namespace SisPlaDAL
         static string cadConexion = @"Server=DESKTOP-4KPFF10\SVR2016 ; Database=SisPlaAct;User Id=sa;Password=sa";
         //static string cadConexion = "Server=DESKTOP-4KPFF10\SVR2016 ; Database=SisPlaAct;Integrated Security=true";
 
-
+        public static void ActividadEntEliminar(int id)
+        {
+            using(SqlConnection conn= new SqlConnection(cadConexion))
+            {
+                conn.Execute("usp_ActividadEliminar", new {@actid= id }
+                , commandType: System.Data.CommandType.StoredProcedure);
+            }
+        }
         public static void ActividadEntActualizar(ActividadEnt act)
         {
             using (SqlConnection conn = new SqlConnection(cadConexion))
@@ -39,6 +47,9 @@ namespace SisPlaDAL
         public static ActividadEnt ActividadEntListadoXId(int id)
         {
             ActividadEnt ActividadEntObj = null;
+
+            DataSet ds = new DataSet();
+            string cadxml = ds.GetXml();
 
             using (SqlConnection conn = new SqlConnection(cadConexion))
             {

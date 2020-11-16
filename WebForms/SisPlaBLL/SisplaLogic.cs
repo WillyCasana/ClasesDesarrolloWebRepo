@@ -11,14 +11,18 @@ namespace SisPlaBLL
 {
     public class SisplaLogic
     {
+
+        public static void ActividadEntEliminar(int id)
+        {
+            SisPlaDb.ActividadEntEliminar(id);
+        }
+
+
         public static void ActividadEntActualizar(ActividadEnt act)
         {
             SisPlaDb.ActividadEntActualizar(act);
 
         }
-
-
-
             public static ActividadEnt ActividadEntListadoXId(int id)
         {
 
