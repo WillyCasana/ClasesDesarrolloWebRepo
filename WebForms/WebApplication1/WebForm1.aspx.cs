@@ -35,6 +35,8 @@ namespace WebApplication1
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+          //  int id = Convert.ToInt32( hfCategoria.Value);
+
             ActividadEnt actObj = new ActividadEnt();
             actObj.ActComentario = txtComentario.Text;
             actObj.ActFecha = Convert.ToDateTime( txtFecha.Text);
