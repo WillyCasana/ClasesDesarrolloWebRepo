@@ -65,6 +65,9 @@ namespace WebApplication1
             //Para asignar al dropdownlist(combobox)
             //En Visual 6 -> combobox.SelectedValue = valor;
             //En asp.net :
+
+
+            cargarCategoria();
             ddlCategoria.Items.FindByValue(actObj.CatId.ToString()).Selected = true;
         
             //para tomar un valor y que no se pierda para poder usarlo en otro metodo
