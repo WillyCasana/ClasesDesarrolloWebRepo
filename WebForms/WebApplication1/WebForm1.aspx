@@ -31,11 +31,13 @@
 
                     <asp:Label ID="Label2" runat="server" Text="Fecha"></asp:Label>
 
-                    <asp:TextBox ID="txtFecha" CssClass="form-control" runat="server"></asp:TextBox>
+                    <%--<asp:TextBox ID="txtFecha" CssClass="form-control" runat="server"></asp:TextBox>--%>
+                    <input id="dFecha" class="form-control" runat="server" type="date" name="name" value="" />
 
                     <asp:Label ID="Label3" runat="server" Text="Categoria"></asp:Label>
 
-                    <asp:DropDownList ID="ddlCategoria" CssClass="form-control"   runat="server" ></asp:DropDownList>
+                    <asp:DropDownList ID="ddlCategoria" CssClass="form-control" onchange="obtenerCat()"   runat="server" ></asp:DropDownList>
+                    <asp:HiddenField ID="hfCat" runat="server" />
 
                     <asp:Label ID="Label4" runat="server" Text="Tiempo"></asp:Label>
                     <asp:TextBox ID="txtTiempo" CssClass="form-control" runat="server"></asp:TextBox>
@@ -46,6 +48,11 @@
 
             </div>
 
+            <div class="row">
+                <div class="col">
+                    <asp:Label ID="lblMensaje" ForeColor="red" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col">
@@ -84,7 +91,13 @@
 
 
 
- 
+    <script>
+        function obtenerCat(){
+          var valCat=  document.getElementById('<%=ddlCategoria.ClientID%>').value;
+          document.getElementById('<%=hfCat.ClientID%>').value=valCat;
+        }
+    
+    </script>
         
     
 </body>

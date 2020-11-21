@@ -38,14 +38,31 @@ namespace WebApplication1
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            lblMensaje.Text = string.Empty;
+            if (txtComentario.Text == "")
+            {
+                lblMensaje.Text="Falta ingresar el campo Comentario";
+                return;
+            }
+
+            if (txtTiempo.Text == "")
+            {
+                lblMensaje.Text = "Falta ingresar el campo Tiempo";
+                return;
+            }
+
             ActividadEnt actObj = new ActividadEnt();
             actObj.ActComentario = txtComentario.Text;
-            actObj.ActFecha = Convert.ToDateTime( txtFecha.Text);
+            //actObj.ActFecha = Convert.ToDateTime( txtFecha.Text);
+            actObj.ActFecha = Convert.ToDateTime( dFecha.Value);
             actObj.ActTiempo = Convert.ToDecimal( txtTiempo.Text);
-            actObj.CatId = Convert.ToInt32( ddlCategoria.SelectedValue);
+            //actObj.CatId = Convert.ToInt32( ddlCategoria.SelectedValue);
+            actObj.CatId = Convert.ToInt32( hfCat.Value);
+
             actObj.UsuId = 1;
 
             SisplaLogic.ActividadEntRegistrar(actObj);
+            limpiarCtrls();
 
             cargarActividad();
 
@@ -59,7 +76,7 @@ namespace WebApplication1
             ActividadEnt actObj=  SisplaLogic.ActividadEntListadoXId(id);
 
             txtComentario.Text = actObj.ActComentario;
-            txtFecha.Text = actObj.ActFecha.ToString();
+            //txtFecha.Text = actObj.ActFecha.ToString();
             txtTiempo.Text = actObj.ActTiempo.ToString();
 
             //Para asignar al dropdownlist(combobox)
@@ -80,20 +97,38 @@ namespace WebApplication1
             ActividadEnt actObj = new ActividadEnt();
 
             actObj.ActComentario = txtComentario.Text;
-            actObj.ActFecha = Convert.ToDateTime( txtFecha.Text);
+            //actObj.ActFecha = Convert.ToDateTime( txtFecha.Text);
+            actObj.ActFecha = Convert.ToDateTime( dFecha.Value);
+            //actObj.CatId = Convert.ToInt32( ddlCategoria.SelectedValue);
+            actObj.CatId = Convert.ToInt32( hfCat.Value);
 
-            actObj.CatId = Convert.ToInt32( ddlCategoria.SelectedValue);
             actObj.ActTiempo = Convert.ToDecimal( txtTiempo.Text);
             actObj.ActId = Convert.ToInt32( ViewState["id"]);
             actObj.UsuId = 1;
 
             SisplaLogic.ActividadEntActualizar(actObj);
+
+            limpiarCtrls();
+
             cargarActividad();
+        }
+
+        private void limpiarCtrls()
+        {
+            txtComentario.Text = string.Empty;
+           // txtFecha.Text = string.Empty;
+            txtTiempo.Text = string.Empty;
+            ddlCategoria.SelectedIndex = -1;
         }
 
         protected void ddlCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = Convert.ToInt32( ddlCategoria.SelectedValue);
         }
+
+        //protected void ddlCategoria_SelectedIndexChanged1(object sender, EventArgs e)
+        //{
+        //    ViewState["catAct"]= ddlCategoria.SelectedValue;
+        //}
     }
 }
