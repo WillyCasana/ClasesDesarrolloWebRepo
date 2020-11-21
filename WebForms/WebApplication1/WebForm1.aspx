@@ -69,7 +69,7 @@
                             </asp:TemplateField>
                              <asp:TemplateField HeaderText="Eliminar">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lnkEliminar" runat="server" CssClass="btn btn-primary" Clave='<%# Eval("ActId") %>'  OnClick ="lnkEliminar_Click" >Eliminar</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkEliminar" runat="server" CssClass="btn btn-primary" Clave='<%# Eval("ActId") %>' OnClientClick="return confirm('¿Confirma eliminación?')"  OnClick ="lnkEliminar_Click" >Eliminar</asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
