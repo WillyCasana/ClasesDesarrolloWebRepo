@@ -130,6 +130,11 @@ namespace WebApplication1
 
         protected void lnkEliminar_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(((LinkButton)(sender)).Attributes["Clave"].ToString());
+
+            SisplaLogic.ActividadEntEliminar(id);
+
+            cargarActividad();
 
         }
 
