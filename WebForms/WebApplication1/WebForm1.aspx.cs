@@ -128,6 +128,11 @@ namespace WebApplication1
             int id = Convert.ToInt32( ddlCategoria.SelectedValue);
         }
 
+        protected void lnkEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //protected void ddlCategoria_SelectedIndexChanged1(object sender, EventArgs e)
         //{
         //    ViewState["catAct"]= ddlCategoria.SelectedValue;
