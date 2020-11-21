@@ -77,6 +77,8 @@ namespace WebApplication1
 
             txtComentario.Text = actObj.ActComentario;
             //txtFecha.Text = actObj.ActFecha.ToString();
+
+            dFecha.Value = actObj.ActFecha.ToString("yyyy-MM-dd");
             txtTiempo.Text = actObj.ActTiempo.ToString();
 
             //Para asignar al dropdownlist(combobox)
