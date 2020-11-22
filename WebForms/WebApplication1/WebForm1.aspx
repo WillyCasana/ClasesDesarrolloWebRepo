@@ -14,6 +14,17 @@
 <!-- jQuery and JS bundle w/ Popper.js -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script>
+        function obtenerCat(){
+           var catId=  document.getElementById("ddlCategoria").value;
+            console.log(catId);
+           document.getElementById("hfCat").value=catId;
+        }
+
+    </script>
+
+
 </head>
 <body>
 
@@ -29,11 +40,21 @@
 
                     <asp:Label ID="Label2" runat="server" Text="Fecha"></asp:Label>
 
-                    <asp:TextBox ID="txtFecha" CssClass="form-control" runat="server"></asp:TextBox>
+                    <%--<asp:TextBox ID="txtFecha" CssClass="form-control" runat="server"></asp:TextBox>--%>
+
+                  
+             
+                    <input id="dFecha" runat="server" class="form-control" type="date" />
+          
 
                     <asp:Label ID="Label3" runat="server" Text="Categoria"></asp:Label>
 
-                    <asp:DropDownList ID="ddlCategoria" CssClass="form-control" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlCategoria" CssClass="form-control" onchange="obtenerCat()" runat="server"></asp:DropDownList>
+                    
+                      
+                    <asp:HiddenField ID="hfCat" runat="server" />
+
+
 
                     <asp:Label ID="Label4" runat="server" Text="Tiempo"></asp:Label>
                     <asp:TextBox ID="txtTiempo" CssClass="form-control" runat="server"></asp:TextBox>
@@ -42,6 +63,12 @@
 
                 </div>
 
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <asp:Label ID="lblMensaje" ForeColor="Red" runat="server" Text=""></asp:Label>
+                </div>
             </div>
 
 
@@ -69,7 +96,7 @@
                             </asp:TemplateField>
                              <asp:TemplateField HeaderText="Eliminar">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lnkEliminar" runat="server" CssClass="btn btn-primary" Clave='<%# Eval("ActId") %>' OnClientClick="return confirm('¿Confirma eliminación?')"  OnClick ="lnkEliminar_Click" >Eliminar</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkEliminar" runat="server" CssClass="btn btn-primary" Clave='<%# Eval("ActId") %>' OnClientClick="return confirm('¿Desea eliminar?')"  OnClick ="lnkEliminar_Click" >Eliminar</asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

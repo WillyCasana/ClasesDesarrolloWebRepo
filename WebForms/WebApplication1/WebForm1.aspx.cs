@@ -38,9 +38,28 @@ namespace WebApplication1
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+
+            lblMensaje.Text = "";
+
+            if (txtComentario.Text == "")
+            {
+                lblMensaje.Text = "Falta ingresar comentario";
+                return;
+            }
+
+            if (txtTiempo.Text == "")
+            {
+                lblMensaje.Text = "Falta ingresar tiempo";
+                return;
+            }
+
+
+
             ActividadEnt actObj = new ActividadEnt();
             actObj.ActComentario = txtComentario.Text;
-            actObj.ActFecha = Convert.ToDateTime( txtFecha.Text);
+            //actObj.ActFecha = Convert.ToDateTime( txtFecha.Text);
+            actObj.ActFecha = Convert.ToDateTime( dFecha.Value);
+
             actObj.ActTiempo = Convert.ToDecimal( txtTiempo.Text);
 
            
@@ -50,6 +69,17 @@ namespace WebApplication1
             SisplaLogic.ActividadEntRegistrar(actObj);
 
             cargarActividad();
+            limpiarCtrls();
+        }
+
+        private void limpiarCtrls()
+        {
+            //txtComentario.Text = "";
+            txtComentario.Text = string.Empty;
+            txtTiempo.Text = string.Empty;
+            ddlCategoria.SelectedIndex = -1;
+            string fec = DateTime.Now.ToString("yyyy-MM-dd");
+            dFecha.Value = fec;
 
         }
 
@@ -60,7 +90,9 @@ namespace WebApplication1
             ActividadEnt actObj = SisplaLogic.ActividadEntListadoXId(id);
 
             txtComentario.Text = actObj.ActComentario;
-            txtFecha.Text = actObj.ActFecha.ToString();
+            //txtFecha.Text = actObj.ActFecha.ToString();
+            dFecha.Value= actObj.ActFecha.ToString("yyyy-MM-dd");
+
             txtTiempo.Text = actObj.ActTiempo.ToString();
 
 
@@ -80,19 +112,23 @@ namespace WebApplication1
 
             actObj.ActId = id;
             actObj.ActComentario = txtComentario.Text;
-            actObj.ActFecha = Convert.ToDateTime(txtFecha.Text);
+            //actObj.ActFecha = Convert.ToDateTime(txtFecha.Text);
+            actObj.ActFecha = Convert.ToDateTime(dFecha.Value);
+
             actObj.ActTiempo = Convert.ToDecimal(txtTiempo.Text);
 
 
-            actObj.CatId = Convert.ToInt32(ddlCategoria.SelectedValue);
-            actObj.UsuId = 1;
+            //actObj.CatId = Convert.ToInt32(ddlCategoria.SelectedValue);
+            actObj.CatId = Convert.ToInt32(hfCat.Value);
 
+            actObj.UsuId = 1;
+            
             SisplaLogic.ActividadEntActualizar(actObj);
 
             cargarActividad();
 
         }
-
+        
         protected void lnkEliminar_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(((LinkButton)(sender)).Attributes["Clave"].ToString());
