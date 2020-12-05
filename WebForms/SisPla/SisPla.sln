@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisPlaVista", "..\SisPlaVis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "..\WebApplication1\WebApplication1.csproj", "{6ADC5890-4B9E-4E82-862E-246875261B54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisPlaVistaMVC", "..\SisPlaVistaMVC\SisPlaVistaMVC.csproj", "{EAA75E35-1657-49B4-9DB7-EFF3518A64B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6ADC5890-4B9E-4E82-862E-246875261B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ADC5890-4B9E-4E82-862E-246875261B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ADC5890-4B9E-4E82-862E-246875261B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA75E35-1657-49B4-9DB7-EFF3518A64B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA75E35-1657-49B4-9DB7-EFF3518A64B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA75E35-1657-49B4-9DB7-EFF3518A64B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA75E35-1657-49B4-9DB7-EFF3518A64B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

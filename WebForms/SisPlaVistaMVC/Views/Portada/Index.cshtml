@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SisPla.PortadaEnt>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PortId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortTitulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortDescripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortMoneda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortPrecio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortTitulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortDescripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortMoneda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortPrecio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
