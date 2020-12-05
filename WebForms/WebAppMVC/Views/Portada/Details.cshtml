@@ -1,0 +1,58 @@
+﻿@model SisPla.PortadaEnt
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PortadaEnt</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PortId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortTitulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortTitulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortDescripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortMoneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortMoneda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortPrecio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortPrecio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

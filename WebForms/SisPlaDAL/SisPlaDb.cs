@@ -15,17 +15,38 @@ namespace SisPlaDAL
         static string cadConexion = @"Server=DESKTOP-4KPFF10\SVR2016 ; Database=SisPlaAct;User Id=sa;Password=sa";
         //static string cadConexion = "Server=DESKTOP-4KPFF10\SVR2016 ; Database=SisPlaAct;Integrated Security=true";
 
-        public static List<ActividadEnt> ActividadEntListado()
+
+        #region Portada
+
+        public static List<PortadaEnt> PortadaListar()
+        {
+            List<PortadaEnt> lista = null;
+
+            using (SqlConnection sqlConn = new SqlConnection(cadConexion))
+            {
+                lista = sqlConn.Query<PortadaEnt>("usp_PortadaListar", commandType: System.Data.CommandType.StoredProcedure).ToList();
+            }
+
+            return lista;
+        }
+
+
+       #endregion
+
+
+    #region Actividad
+
+    public static List<ActividadEnt> ActividadEntListado()
         {
             List<ActividadEnt> ActividadEntObj = null;
 
-            using(SqlConnection conn = new SqlConnection(cadConexion))
+            using (SqlConnection conn = new SqlConnection(cadConexion))
             {
-                ActividadEntObj = conn.Query<ActividadEnt>("USP_ActividadListar", commandType: System.Data.CommandType.StoredProcedure).ToList();           
+                ActividadEntObj = conn.Query<ActividadEnt>("USP_ActividadListar", commandType: System.Data.CommandType.StoredProcedure).ToList();
             }
 
             return ActividadEntObj;
-           
+
         }
 
         public static List<CategoriaEnt> CategoriaEntListado()
@@ -43,13 +64,24 @@ namespace SisPlaDAL
 
         public static void ActividadEntRegistrar(ActividadEnt act)
         {
-            using(SqlConnection conn = new SqlConnection(cadConexion))
+            using (SqlConnection conn = new SqlConnection(cadConexion))
             {
                 conn.Execute("usp_ActividadInsertar"
-                    , new { act.ActComentario, act.ActTiempo, act.CatId, act.ActFecha
-                    , act.UsuId }, commandType: System.Data.CommandType.StoredProcedure);
+                    , new
+                    {
+                        act.ActComentario,
+                        act.ActTiempo,
+                        act.CatId,
+                        act.ActFecha
+                    ,
+                        act.UsuId
+                    }, commandType: System.Data.CommandType.StoredProcedure);
             }
         }
+
+
+
+        #endregion
 
 
 
