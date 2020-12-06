@@ -16,7 +16,7 @@ namespace SisPlaDAL
         //static string cadConexion = "Server=DESKTOP-4KPFF10\SVR2016 ; Database=SisPlaAct;Integrated Security=true";
 
 
-        #region Portada
+    #region Portada
 
         public static List<PortadaEnt> PortadaListar()
         {
