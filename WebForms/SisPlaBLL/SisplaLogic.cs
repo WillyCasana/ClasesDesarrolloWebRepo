@@ -29,6 +29,11 @@ namespace SisPlaBLL
             return SisPlaDb.ActividadEntListado();
         }
 
+        public static PortadaCompraEnt PortadaListarXId(int portId)
+        {
+            return SisPlaDb.PortadaListarXId(portId);
+        }
+
         public static List<CategoriaEnt> CategoriaEntListado()
         {
             return SisPlaDb.CategoriaEntListado();

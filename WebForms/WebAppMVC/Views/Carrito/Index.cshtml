@@ -1,6 +1,7 @@
 ﻿@model List<SisPla.PortadaEnt>
 @{
     ViewBag.Title = "Index";
+    int n = 0;
 }
 
 <div class="jumbotron jumbotron-fluid">
@@ -17,9 +18,13 @@
             <div class="card" style="width: 18rem;">
                 <img src="https://cms.cliqued.it/uploads/tendejon/originals/6-avellana.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">@Model[0].PortTitulo </h5>
-                    <p class="card-text">@Model[0].PortDescripcion</p>
+
+                    <h5 class="card-title">@Model[n].PortTitulo </h5>
+                    <p class="card-text">@Model[n].PortDescripcion</p>
                     <a href="#" class="btn btn-primary">Comprar</a>
+                    @Html.ActionLink("Comprar","DetalleCompra","Carrito", new { PortId= @Model[n].PortId }, new {@class="btn btn-primary" })
+
+                    @{ if (n < (Model.Count -1) ) { n = n + 1; };}
                 </div>
             </div>
         </div>
@@ -27,9 +32,11 @@
             <div class="card" style="width: 18rem;">
                 <img src="https://cms.cliqued.it/uploads/tendejon/originals/6-avellana.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    <h5 class="card-title">@Model[n].PortTitulo</h5>
+                    <p class="card-text">@Model[n].PortDescripcion</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                    @{ if (n < (Model.Count - 1)) { n = n + 1; };}
                 </div>
             </div>
         </div>
@@ -37,9 +44,11 @@
             <div class="card" style="width: 18rem;">
                 <img src="https://cms.cliqued.it/uploads/tendejon/originals/7-rebanada-de-pastel-zanahoria.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    <h5 class="card-title">@Model[n].PortTitulo</h5>
+                    <p class="card-text">@Model[n].PortDescripcion</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                    @{ if (n < (Model.Count - 1)) { n = n + 1; };}
                 </div>
             </div>
         </div>
@@ -49,9 +58,11 @@
             <div class="card" style="width: 18rem;">
                 <img src="https://cms.cliqued.it/uploads/tendejon/originals/8-pastel-entero.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    <h5 class="card-title">@Model[n].PortTitulo</h5>
+                    <p class="card-text">@Model[n].PortDescripcion</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                    @{ if (n < (Model.Count - 1)) { n = n + 1; };}
                 </div>
             </div>
         </div>
@@ -59,9 +70,11 @@
             <div class="card" style="width: 18rem;">
                 <img src="https://cms.cliqued.it/uploads/tendejon/originals/8-pastel-entero.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    <h5 class="card-title">@Model[n].PortTitulo</h5>
+                    <p class="card-text">@Model[n].PortDescripcion</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                    @{ if (n < (Model.Count - 1)) { n = n + 1; };}
                 </div>
             </div>
         </div>
@@ -69,13 +82,15 @@
             <div class="card" style="width: 18rem;">
                 <img src="https://cms.cliqued.it/uploads/tendejon/originals/8-pastel-entero.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    <h5 class="card-title">@Model[n].PortTitulo</h5>
+                    <p class="card-text">@Model[n].PortDescripcion</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
+
+            @{ if (n < (Model.Count - 1)) { n = n + 1; };}
         </div>
     </div>
-
 </div>
 
