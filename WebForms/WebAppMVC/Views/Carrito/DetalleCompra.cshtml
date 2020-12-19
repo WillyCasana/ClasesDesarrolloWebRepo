@@ -1,0 +1,201 @@
+﻿@model SisPla.PortadaCompraEnt
+
+@{
+    ViewBag.Title = "DetalleCompra";
+}
+
+
+<h2>DetalleCompra</h2>
+
+<div>
+    @*<h4>PortadaCompraEnt</h4>*@
+    @*<hr />*@
+
+    @*<table class="table table-striped" >
+            <tr>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>    @Html.DisplayFor(model => model.Descripcion)</td>
+                <td> @Html.DisplayFor(model => model.PcPrecio)</td>
+                <td> @Html.DisplayFor(model => model.PcCantidad)</td>
+                <td>  @Html.DisplayFor(model => model.Total)</td>
+            </tr>
+        </table>*@
+
+
+    <!--<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Descripcion
+                </th>
+                <th>
+                    Precio
+                </th>
+                <th>
+                    Cantidad
+                </th>
+                <th>
+                    Total
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Descripcion)
+                </td>
+                <td>-->
+    @*@Html.DisplayFor(model => model.PcPrecio)*@
+    <!--@Html.EditorFor(model => model.PcPrecio, new { htmlAttributes = new { @id = "precioId", @class = "form-control", @style = "width:80px", @disabled = true } })
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PcCantidad)
+
+                    @Html.EditorFor(model => model.PcCantidad, new { htmlAttributes = new { @id = "cantidadId", @class = "form-control", @style = "width:80px", @onchange = "obtenerTotal()" } })
+                </td>
+                <td>
+
+
+                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @id = "totalId", @type = "number", @class = "form-control", @style = "width:80px", @disabled=true } })
+
+                </td>
+            </tr>
+        </tbody>
+
+    </table>-->
+    @*<dl class="dl-horizontal">*@
+    @*<dt>
+            @Html.DisplayNameFor(model => model.PcId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcId)
+        </dd>*@
+
+    @*<dt>
+            @Html.DisplayNameFor(model => model.PortId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortId)
+        </dd>*@
+
+    @*<dt>
+            @Html.DisplayNameFor(model => model.PcFecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcFecha)
+        </dd>*@
+
+    @*<dt>
+            @Html.DisplayNameFor(model => model.PcPrecio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcPrecio)
+        </dd>*@
+
+    @*<dt>
+            @Html.DisplayNameFor(model => model.PcMoneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcMoneda)
+        </dd>*@
+
+    @*<dt>
+            @Html.DisplayNameFor(model => model.PcCantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcCantidad)
+        </dd>*@
+
+    @*<dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>*@
+
+    @*<dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>*@
+
+    @*</dl>*@
+</div>
+
+@using (Html.BeginForm("Guardar", "Carrito", FormMethod.Post))
+{
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Descripcion
+                </th>
+                <th>
+                    Precio
+                </th>
+                <th>
+                    Cantidad
+                </th>
+                <th>
+                    Total
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Descripcion)
+                    @Html.HiddenFor(model=>model.PortId)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(model => model.PcPrecio)*@
+                    @Html.EditorFor(model => model.PcPrecio, new { htmlAttributes = new { @id = "precioId", @class = "form-control", @style = "width:80px" } })
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PcCantidad)
+
+                    @Html.EditorFor(model => model.PcCantidad, new { htmlAttributes = new { @id = "cantidadId", @class = "form-control", @style = "width:80px", @onchange = "obtenerTotal()" } })
+                </td>
+                <td>
+
+
+                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @id = "totalId", @type = "number", @class = "form-control", @style = "width:80px" } })
+
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <button type="submit">Guardar</button>
+  
+}
+
+
+<p>
+    @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { /* id = Model.PrimaryKey */ }) |*@
+    @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { total = Model.Total }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

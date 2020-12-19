@@ -30,13 +30,51 @@ namespace SisPlaDAL
             return lista;
         }
 
+        public static void PortadaCompraGrabar(PortadaCompraEnt obj)
+        {
+            using (SqlConnection conn = new SqlConnection(cadConexion))
+            {
+                conn.Execute("usp_PortadaCompraGrabar"
+                    , new
+                    {
+                       obj.PortId,
+                       obj.PcPrecio,
+                       obj.PcCantidad
+                    }, commandType: System.Data.CommandType.StoredProcedure);
+            }
+        }
 
-       #endregion
+        public static PortadaCompraEnt PortadaListarXId(int id)
+        {
+            PortadaCompraEnt pcObj = null;
+           using (SqlConnection sqlConn = new SqlConnection(cadConexion))
+            {
+                sqlConn.Open();
+                SqlCommand cmd = new SqlCommand("usp_PortadaListarXId", sqlConn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@portid", id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    pcObj = new PortadaCompraEnt();
+                    pcObj.Descripcion = dr["PortDescripcion"].ToString();
+                    pcObj.PcPrecio = Convert.ToDecimal( dr["PortPrecio"]);
+                    pcObj.PortId = Convert.ToInt32( dr["PortId"]);
+                }
+
+            }
+
+            return pcObj;
+        }
 
 
-    #region Actividad
+        #endregion
 
-    public static List<ActividadEnt> ActividadEntListado()
+
+        #region Actividad
+
+        public static List<ActividadEnt> ActividadEntListado()
         {
             List<ActividadEnt> ActividadEntObj = null;
 
