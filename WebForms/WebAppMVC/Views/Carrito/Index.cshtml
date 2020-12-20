@@ -21,7 +21,7 @@
 
                     <h5 class="card-title">@Model[n].PortTitulo </h5>
                     <p class="card-text">@Model[n].PortDescripcion</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+              
                     @Html.ActionLink("Comprar","DetalleCompra","Carrito", new { PortId= @Model[n].PortId }, new {@class="btn btn-primary" })
 
                     @{ if (n < (Model.Count -1) ) { n = n + 1; };}
@@ -35,7 +35,7 @@
 
                     <h5 class="card-title">@Model[n].PortTitulo</h5>
                     <p class="card-text">@Model[n].PortDescripcion</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    @Html.ActionLink("Comprar", "DetalleCompra", "Carrito", new { PortId = @Model[n].PortId }, new { @class = "btn btn-primary" })
                     @{ if (n < (Model.Count - 1)) { n = n + 1; };}
                 </div>
             </div>
@@ -47,7 +47,7 @@
 
                     <h5 class="card-title">@Model[n].PortTitulo</h5>
                     <p class="card-text">@Model[n].PortDescripcion</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    @Html.ActionLink("Comprar", "DetalleCompra", "Carrito", new { PortId = @Model[n].PortId }, new { @class = "btn btn-primary" })
                     @{ if (n < (Model.Count - 1)) { n = n + 1; };}
                 </div>
             </div>
