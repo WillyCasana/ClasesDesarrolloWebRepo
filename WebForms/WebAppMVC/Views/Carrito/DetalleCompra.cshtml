@@ -144,7 +144,7 @@
     @*</dl>*@
 </div>
 
-@using (Html.BeginForm("Guardar", "Carrito", FormMethod.Post))
+@using (Html.BeginForm("DetalleCompra", "Carrito", FormMethod.Post))
 {
 
     <table class="table table-striped">
@@ -175,7 +175,7 @@
                     @Html.EditorFor(model => model.PcPrecio, new { htmlAttributes = new { @id = "precioId", @class = "form-control", @style = "width:80px" } })
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.PcCantidad)
+               
 
                     @Html.EditorFor(model => model.PcCantidad, new { htmlAttributes = new { @id = "cantidadId", @class = "form-control", @style = "width:80px", @onchange = "obtenerTotal()" } })
                 </td>
@@ -190,6 +190,7 @@
 
     </table>
     <button type="submit">Guardar</button>
+    @ViewBag.mensaje
   
 }
 

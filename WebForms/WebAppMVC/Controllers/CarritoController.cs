@@ -20,20 +20,23 @@ namespace WebAppMVC.Controllers
         public ActionResult DetalleCompra(int id)
         {
             PortadaCompraEnt pcObj = SisplaLogic.PortadaListarXId(id);
-
+            //ViewBag.mensaje = "Exito";
             return View(pcObj);
         }
 
-        public ActionResult Guardar(PortadaCompraEnt obj)
+        [HttpPost]  //IMPORTANTE PARA DISTINGUIR DEL OTRO DetalleCompra
+        public ActionResult DetalleCompra(PortadaCompraEnt obj)
         {
             SisplaLogic.PortadaCompraGrabar(obj);
 
 
 
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
 
-            //ViewBag.mensaje = "Exito";
-            //return RedirectToAction("DetalleCompra", new { id= obj.PortId});
+
+            //return RedirectToAction("DetalleCompra", new { id = obj.PortId });
+
+            return View(obj);
         }
 
       
