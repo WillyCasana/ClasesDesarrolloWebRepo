@@ -234,6 +234,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Carrito\DetalleCompra.cshtml" />
+    <Content Include="Views\Carrito\DetalleCompraAnt.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

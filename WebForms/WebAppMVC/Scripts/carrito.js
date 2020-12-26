@@ -1,6 +1,4 @@
-﻿
-    function obtenerTotal() {
-        console.log(10 * 20);
+﻿    function obtenerTotal() {
             var precio = document.getElementById("precioId").value;
             var precioNum = parseFloat(precio);
             var cantidad = document.getElementById("cantidadId").value;

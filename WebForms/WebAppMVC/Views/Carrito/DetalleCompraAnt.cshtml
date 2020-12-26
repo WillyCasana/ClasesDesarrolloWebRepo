@@ -1,0 +1,121 @@
+﻿@model SisPla.PortadaCompraEnt
+
+@{
+    ViewBag.Title = "DetalleCompra";
+}
+
+<h2>DetalleCompra</h2>
+
+@*<div>
+    <h4>PortadaCompraEnt</h4>**@
+<hr />
+
+@using (Html.BeginForm("Guardar", "Carrito"))
+{
+    <table class="table table-striped">
+        <tr>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td> @Html.DisplayFor(model => model.Descripcion)</td>
+            <td> @Html.DisplayFor(model => model.PcPrecio)</td>
+
+            @*<td> @Html.DisplayFor(model => model.PcCantidad)</td>*@
+
+            <td> @Html.EditorFor(model => model.PcCantidad, new { htmlAttributes = new { @class = "form-control", @style = "width:80px", @id = "cantidadId" } })  </td>
+
+
+            <td> @Html.DisplayFor(model => model.Total)</td>
+
+        </tr>
+
+
+    </table>
+
+    <button type="submit">Guardar</button>
+}
+
+
+
+<!--<dl class="dl-horizontal">-->
+@*<dt>
+        @Html.DisplayNameFor(model => model.PcId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PcId)
+    </dd>*@
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.PortId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PortId)
+    </dd>*@
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.PcFecha)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PcFecha)
+    </dd>*@
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.PcPrecio)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PcPrecio)
+    </dd>*@
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.PcMoneda)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PcMoneda)
+    </dd>*@
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.PcCantidad)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PcCantidad)
+    </dd>*@
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.Activo)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Activo)
+    </dd>*@
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.Descripcion)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Descripcion)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Total)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Total)
+    </dd>*@
+
+@*</dl>
+    </div>*@
+<!--<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>-->

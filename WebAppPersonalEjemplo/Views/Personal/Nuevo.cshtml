@@ -1,0 +1,31 @@
+﻿@model WebAppPersonalEjemplo.Models.PersonalEnt
+
+@{
+    ViewBag.Title = "Nuevo";
+    TempData["listado"] = ViewBag.listado; //El ViewBag trae el listado del controller
+}
+
+<h2>Nuevo</h2>
+
+@using (Html.BeginForm("Registrar", "Personal"))
+{
+    @Html.HiddenFor(model => model.PersonalId)
+    @Html.LabelFor(model => model.Nombres)
+    @Html.TextBoxFor(model => model.Nombres)
+    @Html.LabelFor(model => model.Apellidos)
+    @Html.TextBoxFor(model => model.Apellidos)
+    @Html.LabelFor(model => model.Correo)
+    @Html.TextBoxFor(model => model.Correo)
+
+    <button class="btn btn-primary" type="submit">Guardar</button>
+
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

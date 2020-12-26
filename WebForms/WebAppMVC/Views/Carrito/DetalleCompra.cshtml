@@ -144,7 +144,7 @@
     @*</dl>*@
 </div>
 
-@using (Html.BeginForm("DetalleCompra", "Carrito", FormMethod.Post))
+@using (Html.BeginForm("Guardar", "Carrito"))
 {
 
     <table class="table table-striped">
@@ -168,35 +168,43 @@
             <tr>
                 <td>
                     @Html.DisplayFor(model => model.Descripcion)
-                    @Html.HiddenFor(model=>model.PortId)
+                    @Html.HiddenFor(model => model.PortId)
                 </td>
                 <td>
                     @*@Html.DisplayFor(model => model.PcPrecio)*@
                     @Html.EditorFor(model => model.PcPrecio, new { htmlAttributes = new { @id = "precioId", @class = "form-control", @style = "width:80px" } })
                 </td>
                 <td>
-               
 
-                    @Html.EditorFor(model => model.PcCantidad, new { htmlAttributes = new { @id = "cantidadId", @class = "form-control", @style = "width:80px", @onchange = "obtenerTotal()" } })
-                </td>
-                <td>
+                    @Html.TextBoxFor(model => model.PcCantidad)
+                    @Html.EditorFor(model => model.PcCantidad, new{ htmlAttributes= new { @type = "text" }})
 
 
-                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @id = "totalId", @type = "number", @class = "form-control", @style = "width:80px" } })
+                        @Html.EditorFor(model => model.PcCantidad, new { htmlAttributes = new { @id = "cantidadId", @class = "form-control",@type="number", @style = "width:80px", @onchange = "obtenerTotal()" } })
+                    </ td >
+    
+                    < td >
 
-                </td>
-            </tr>
-        </tbody>
 
-    </table>
-    <button type="submit">Guardar</button>
-    @ViewBag.mensaje
-  
+                        @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @id = "totalId", @type = "number", @class = "form-control", @style = "width:80px" } })
+
+                    </ td >
+    
+                </ tr >
+    
+            </ tbody >
+    
+
+        </ table >
+    
+        < button type = "submit" > Guardar </ button >
+        @ViewBag.mensaje
+
 }
 
 
-<p>
-    @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { /* id = Model.PrimaryKey */ }) |*@
-    @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { total = Model.Total }) |
+< p >
+                @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { /* id = Model.PrimaryKey */ }) |*@
+                @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { total = Model.Total }) |
     @Html.ActionLink("Back to List", "Index")*@
-</p>
+                    </p>
