@@ -144,7 +144,7 @@
     @*</dl>*@
 </div>
 
-@using (Html.BeginForm("Guardar", "Carrito"))
+@using (Html.BeginForm("DetalleCompra", "Carrito", FormMethod.Post))
 {
 
     <table class="table table-striped">
@@ -176,35 +176,27 @@
                 </td>
                 <td>
 
-                    @Html.TextBoxFor(model => model.PcCantidad)
-                    @Html.EditorFor(model => model.PcCantidad, new{ htmlAttributes= new { @type = "text" }})
+
+                    @Html.EditorFor(model => model.PcCantidad, new { htmlAttributes = new { @id = "cantidadId", @class = "form-control", @style = "width:80px", @onchange = "obtenerTotal()" } })
+                </td>
+                <td>
 
 
-                        @Html.EditorFor(model => model.PcCantidad, new { htmlAttributes = new { @id = "cantidadId", @class = "form-control",@type="number", @style = "width:80px", @onchange = "obtenerTotal()" } })
-                    </ td >
-    
-                    < td >
+                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @id = "totalId", @type = "number", @class = "form-control", @style = "width:80px" } })
 
+                </td>
+            </tr>
+        </tbody>
 
-                        @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @id = "totalId", @type = "number", @class = "form-control", @style = "width:80px" } })
-
-                    </ td >
-    
-                </ tr >
-    
-            </ tbody >
-    
-
-        </ table >
-    
-        < button type = "submit" > Guardar </ button >
-        @ViewBag.mensaje
+    </table>
+    <button type="submit">Guardar</button>
+    @ViewBag.mensaje
 
 }
 
 
-< p >
-                @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { /* id = Model.PrimaryKey */ }) |*@
-                @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { total = Model.Total }) |
-    @Html.ActionLink("Back to List", "Index")*@
-                    </p>
+<p>
+    @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { /* id = Model.PrimaryKey */ }) |*@
+    @*@Html.ActionLink("Guardar", "Guardar", "Carrito", new { total = Model.Total }) |
+        @Html.ActionLink("Back to List", "Index")*@
+</p>
