@@ -48,7 +48,12 @@ namespace SisPlaBLL
             SisPlaDb.ActividadEntRegistrar(act);
         }
 
-        #endregion 
+        public static void PagoCompraGuardar(PortadaPagoEnt obj)
+        {
+            SisPlaDb.PagoCompraGuardar(obj);
+        }
+
+        #endregion
 
     }
 }

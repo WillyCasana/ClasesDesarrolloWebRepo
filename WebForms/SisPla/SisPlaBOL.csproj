@@ -45,6 +45,7 @@
     <Compile Include="CategoriaEnt.cs" />
     <Compile Include="PortadaCompraEnt.cs" />
     <Compile Include="PortadaEnt.cs" />
+    <Compile Include="PortadaPagoEnt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

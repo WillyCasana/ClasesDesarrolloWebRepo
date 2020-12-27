@@ -29,10 +29,27 @@ namespace WebAppMVC.Controllers
         {
             SisplaLogic.PortadaCompraGrabar(obj);
 
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+
+            return View("PagoCompra");
+
+
+
             //return RedirectToAction("DetalleCompra", new { id = obj.PortId });
 
             //return View(obj);
+        }
+
+        public ActionResult PagoCompra()
+        {
+            return View();
+        }
+
+        public ActionResult PagoCompraGuardar(PortadaPagoEnt obj)
+        {
+            SisplaLogic.PagoCompraGuardar(obj);
+
+            return RedirectToAction("Index");
         }
 
         public ActionResult Guardar(PortadaCompraEnt obj)

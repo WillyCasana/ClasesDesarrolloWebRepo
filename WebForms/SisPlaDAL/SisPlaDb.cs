@@ -44,6 +44,23 @@ namespace SisPlaDAL
             }
         }
 
+        public static void PagoCompraGuardar(PortadaPagoEnt obj)
+        {
+            using (SqlConnection conn = new SqlConnection(cadConexion))
+            {
+                conn.Execute("usp_PortadaPagoGrabar"
+                    , new
+                    {
+                        obj.NumTarjeta,
+                        obj.MesAnio,
+                        obj.Cvv,
+                        obj.Nombres,
+                        obj.Apellidos,
+                        obj.Correo
+                    }, commandType: System.Data.CommandType.StoredProcedure);
+            }
+        }
+
         public static PortadaCompraEnt PortadaListarXId(int id)
         {
             PortadaCompraEnt pcObj = null;
