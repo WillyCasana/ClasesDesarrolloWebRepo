@@ -3,36 +3,41 @@
 @{
     ViewBag.Title = "PagoCompra";
 }
-
 <h2>Pagar Compra</h2>
-
-@using (Html.BeginForm("PagoCompraGuardar", "Carrito", FormMethod.Post))
+@using (Html.BeginForm("PagoCompraGuardar", "Carrito"))
 {
 <table>
     <tr >
         <td colspan="2">
-            @Html.EditorFor(model => model.NumTarjeta,new { htmlAttributes = new {@style="width:500px",@placeholder="Numero de Tarjeta" } })
+            @Html.EditorFor(model => model.NumTarjeta
+            ,new { htmlAttributes = new {@style="width:500px"
+            ,@placeholder="Numero de Tarjeta" } })
         </td>
     </tr>
     <tr>
         <td>
-            @Html.EditorFor(model => model.MesAnio, new { htmlAttributes=new {@style="width:150px", @placeholder="MM/AA" } })
+            @Html.EditorFor(model => model.MesAnio
+            , new { htmlAttributes=new {@style="width:150px", @placeholder="MM/AA" } })
         </td>
         <td>
-            @Html.EditorFor(model => model.Cvv, new { htmlAttributes = new { @style = "width:150px", @placeholder = "CVV" } })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.EditorFor(model => model.Nombres, new { htmlAttributes = new { @placeholder = "Nombres" } })
-        </td>
-        <td>
-            @Html.EditorFor(model => model.Apellidos, new { htmlAttributes = new { @placeholder = "Apellidos" } })
+            @Html.EditorFor(model => model.Cvv
+            , new { htmlAttributes = new { @style = "width:150px", @placeholder = "CVV" } })
         </td>
     </tr>
     <tr>
         <td>
-            @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @placeholder = "Email" } })
+            @Html.EditorFor(model => model.Nombres
+            , new { htmlAttributes = new { @placeholder = "Nombres" } })
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Apellidos
+            , new { htmlAttributes = new { @placeholder = "Apellidos" } })
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            @Html.EditorFor(model => model.Correo
+            , new { htmlAttributes = new { @placeholder = "Email", @style = "width:450px" } })
         </td>
     </tr>
     <tr>

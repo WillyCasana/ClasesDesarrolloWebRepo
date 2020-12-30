@@ -45,6 +45,7 @@ namespace WebAppMVC.Controllers
             return View();
         }
 
+    
         public ActionResult PagoCompraGuardar(PortadaPagoEnt obj)
         {
             SisplaLogic.PagoCompraGuardar(obj);
@@ -52,12 +53,25 @@ namespace WebAppMVC.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Guardar(PortadaCompraEnt obj)
+   
+
+        //verbos del protocolo Html
+        //Post(registrar), Get(Consultar), Put(Update), Delete(Eliminar)
+        [HttpPost]
+        public ActionResult PagoCompraGuardar()
         {
-            SisplaLogic.PortadaCompraGrabar(obj);
-           // return View();
+           // SisplaLogic.PagoCompraGuardar(obj);
 
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Guardar(PortadaCompraEnt obj)
+        {
+      
+            SisplaLogic.PortadaCompraGrabar(obj);
+
+            return View("PagoCompra");
         }
 
       
