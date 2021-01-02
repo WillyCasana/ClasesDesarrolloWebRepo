@@ -30,6 +30,14 @@ namespace SisPlaDAL
             return lista;
         }
 
+        public static void PortadaRegistrar(PortadaEnt obj)
+        {
+            using(SqlConnection sqlConn = new SqlConnection(cadConexion))
+            {
+                sqlConn.Execute("usp_PortadaRegistrar", new { obj.PortTitulo, obj.PortDescripcion, obj.PortMoneda, obj.PortPrecio }, null, null, System.Data.CommandType.StoredProcedure);
+            }
+        }
+
         public static void PortadaCompraGrabar(PortadaCompraEnt obj)
         {
             using (SqlConnection conn = new SqlConnection(cadConexion))

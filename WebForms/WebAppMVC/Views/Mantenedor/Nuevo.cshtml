@@ -1,0 +1,38 @@
+﻿@model SisPla.PortadaEnt
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>Nuevo</h2>
+
+@using (Html.BeginForm("Guardar","Mantenedor"))
+{
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label>Titulo</label>
+            @Html.EditorFor(model => model.PortTitulo, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="col">
+            <label>Descripcion</label>
+            @Html.EditorFor(model => model.PortDescripcion, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Moneda</label>
+            @Html.EditorFor(model => model.PortMoneda, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="col">
+            <label>Precio</label>
+            @Html.EditorFor(model => model.PortPrecio, new { htmlAttributes = new { @class = "form-control",@type="number" } })
+        </div>
+    </div>
+    <div class="row pt-4">
+        <div class="col">
+           <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </div>
+</div>
+}

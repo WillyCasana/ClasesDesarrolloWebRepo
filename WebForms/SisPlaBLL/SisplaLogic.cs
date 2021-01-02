@@ -29,6 +29,11 @@ namespace SisPlaBLL
             return SisPlaDb.ActividadEntListado();
         }
 
+        public static void PortadaRegistrar(PortadaEnt obj)
+        {
+            SisPlaDb.PortadaRegistrar(obj);
+        }
+
         public static PortadaCompraEnt PortadaListarXId(int id)
         {
             return SisPlaDb.PortadaListarXId(id);
