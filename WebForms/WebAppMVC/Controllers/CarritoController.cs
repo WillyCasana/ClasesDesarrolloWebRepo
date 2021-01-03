@@ -48,22 +48,29 @@ namespace WebAppMVC.Controllers
     
         public ActionResult PagoCompraGuardar(PortadaPagoEnt obj)
         {
+
+           if (!ModelState.IsValid)
+            {
+                return View("PagoCompra",obj); //Si hay algún error en los campos, se mantiene en la misma pantalla
+            }
+
             SisplaLogic.PagoCompraGuardar(obj);
 
-            return RedirectToAction("Index");
+            // return RedirectToAction("Index");
+            return View("Confirmacion");
         }
 
    
 
         //verbos del protocolo Html
         //Post(registrar), Get(Consultar), Put(Update), Delete(Eliminar)
-        [HttpPost]
-        public ActionResult PagoCompraGuardar()
-        {
-           // SisplaLogic.PagoCompraGuardar(obj);
+        //[HttpPost]
+        //public ActionResult PagoCompraGuardar()
+        //{
+        //   // SisplaLogic.PagoCompraGuardar(obj);
 
-            return RedirectToAction("Index");
-        }
+        //    return RedirectToAction("Index");
+        //}
 
         [HttpPost]
         public ActionResult Guardar(PortadaCompraEnt obj)

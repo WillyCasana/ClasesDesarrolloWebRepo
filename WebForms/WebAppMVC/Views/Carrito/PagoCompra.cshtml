@@ -6,48 +6,85 @@
 <h2>Pagar Compra</h2>
 @using (Html.BeginForm("PagoCompraGuardar", "Carrito"))
 {
-<table>
-    <tr >
-        <td colspan="2">
-            @Html.EditorFor(model => model.NumTarjeta
-            ,new { htmlAttributes = new {@style="width:500px"
-            ,@placeholder="Numero de Tarjeta" } })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.EditorFor(model => model.MesAnio
-            , new { htmlAttributes=new {@style="width:150px", @placeholder="MM/AA" } })
-        </td>
-        <td>
-            @Html.EditorFor(model => model.Cvv
-            , new { htmlAttributes = new { @style = "width:150px", @placeholder = "CVV" } })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.EditorFor(model => model.Nombres
-            , new { htmlAttributes = new { @placeholder = "Nombres" } })
-        </td>
-        <td>
-            @Html.EditorFor(model => model.Apellidos
-            , new { htmlAttributes = new { @placeholder = "Apellidos" } })
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            @Html.EditorFor(model => model.Correo
-            , new { htmlAttributes = new { @placeholder = "Email", @style = "width:450px" } })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button type="submit" class="btn btn-primary">Pagar</button>
-        </td>
-    </tr>
-</table>
+    @Html.ValidationSummary(true);
+    <div class="container ">
+        <div class="row">
 
-   
+            <div class="d-flex justify-content-center mx-auto">
+                <div class="col col-md-12 col-lg-12">
+                    @Html.EditorFor(model => model.NumTarjeta
+                  , new
+                  {
+                      htmlAttributes = new
+                      {
+
+                               @placeholder = "Numero de Tarjeta"
+                                    ,
+                               @class = "form-control",
+                               @style = "width:265px"
+                           }
+                       })
+
+                    @Html.ValidationMessageFor(model=>model.NumTarjeta)
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-1">
+            <div class="d-flex justify-content-center mx-auto">
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.MesAnio
+                 , new { htmlAttributes = new { @placeholder = "MM/AA", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model=>model.MesAnio)
+                </div>
+                <div class="col-md-4 pl-0">
+                    @Html.EditorFor(model => model.Cvv
+                      , new { htmlAttributes = new { @placeholder = "CVV", @class = "form-control", @type="text" } })
+                    @Html.ValidationMessageFor(model=>model.Cvv)
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-1">
+            <div class="d-flex justify-content-center mx-auto">
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Nombres
+                  , new { htmlAttributes = new { @placeholder = "Nombres", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model=>model.Nombres)
+
+                </div>
+                <div class="col-md-4 pl-0">
+                    @Html.EditorFor(model => model.Apellidos
+                    , new { htmlAttributes = new { @placeholder = "Apellidos", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model=>model.Apellidos)
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row mt-1">
+            <div class="d-flex justify-content-center mx-auto">
+                <div class="col-md-12 col-lg-12">
+                    @Html.EditorFor(model => model.Correo
+                   , new { htmlAttributes = new { @placeholder = "Email", @class = "form-control", @style = "width:265px" } })
+                    @Html.ValidationMessageFor(model=>model.Correo)
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-1 text-center">
+            <div class="col-md-12 col-lg-12">
+                <button type="submit" class="btn btn-primary" style="width:265px">Pagar</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
 }
 
 
