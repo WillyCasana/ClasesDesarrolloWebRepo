@@ -6,12 +6,12 @@
 <h2>Pagar Compra</h2>
 @using (Html.BeginForm("PagoCompraGuardar", "Carrito"))
 {
-    @Html.ValidationSummary(true);
+    @Html.ValidationSummary(true)
     <div class="container ">
         <div class="row">
 
-            <div class="d-flex justify-content-center mx-auto">
-                <div class="col col-md-12 col-lg-12">
+            <div class="mx-auto">
+                <div class="col-md-12">
                     @Html.EditorFor(model => model.NumTarjeta
                   , new
                   {
@@ -31,14 +31,14 @@
             </div>
 
         </div>
-        <div class="row mt-1">
+        <div class="row mt-1">   @*margin-top = mt*@
             <div class="d-flex justify-content-center mx-auto">
                 <div class="col-md-4">
                     @Html.EditorFor(model => model.MesAnio
                  , new { htmlAttributes = new { @placeholder = "MM/AA", @class = "form-control" } })
                     @Html.ValidationMessageFor(model=>model.MesAnio)
                 </div>
-                <div class="col-md-4 pl-0">
+                <div class="col-md-4 pl-0">   @*pl=padding-left, pt=padding-top, pr=padding-right, pb=padding-bottom*@
                     @Html.EditorFor(model => model.Cvv
                       , new { htmlAttributes = new { @placeholder = "CVV", @class = "form-control", @type="text" } })
                     @Html.ValidationMessageFor(model=>model.Cvv)
@@ -54,7 +54,7 @@
                     @Html.ValidationMessageFor(model=>model.Nombres)
 
                 </div>
-                <div class="col-md-4 pl-0">
+                <div class="col-md-4 pl-0">     @* pl=padding-left *@
                     @Html.EditorFor(model => model.Apellidos
                     , new { htmlAttributes = new { @placeholder = "Apellidos", @class = "form-control" } })
                     @Html.ValidationMessageFor(model=>model.Apellidos)
@@ -65,7 +65,7 @@
         </div>
         <div class="row mt-1">
             <div class="d-flex justify-content-center mx-auto">
-                <div class="col-md-12 col-lg-12">
+                <div class="col-md-12">
                     @Html.EditorFor(model => model.Correo
                    , new { htmlAttributes = new { @placeholder = "Email", @class = "form-control", @style = "width:265px" } })
                     @Html.ValidationMessageFor(model=>model.Correo)
@@ -74,7 +74,7 @@
 
         </div>
         <div class="row mt-1 text-center">
-            <div class="col-md-12 col-lg-12">
+            <div class="col-md-12">
                 <button type="submit" class="btn btn-primary" style="width:265px">Pagar</button>
             </div>
 

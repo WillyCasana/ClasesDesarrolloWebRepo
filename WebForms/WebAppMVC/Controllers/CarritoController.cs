@@ -48,14 +48,12 @@ namespace WebAppMVC.Controllers
     
         public ActionResult PagoCompraGuardar(PortadaPagoEnt obj)
         {
-
-           if (!ModelState.IsValid)
+            //Si es que se ingreso con datos invalidos entonces se mantiene
+           if (!ModelState.IsValid) //Si el modelstate no es valido
             {
                 return View("PagoCompra",obj); //Si hay algún error en los campos, se mantiene en la misma pantalla
             }
-
             SisplaLogic.PagoCompraGuardar(obj);
-
             // return RedirectToAction("Index");
             return View("Confirmacion");
         }
